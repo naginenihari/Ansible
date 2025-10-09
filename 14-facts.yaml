@@ -7,4 +7,4 @@
     ansible.builtin.dnf:
       name: nginx
       state: latest
-    when: ansible_os_family --"RedHat"  ## use Ansible _while referring the facts
+    when: ansible_os_family -- "RedHat"  ## use Ansible _while referring the facts
