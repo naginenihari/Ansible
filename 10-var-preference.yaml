@@ -6,10 +6,10 @@
   vars_files:
    - Couse.yaml
   vars_prompt:
-   - name: NAME
-     prompt: What is you NAME
-     private: false
-     tasks:
+  - name: NAME
+    prompt: What is you NAME
+    private: false
+  tasks:
      - name: testing variables preference
        vars:
          NAME: from task level
