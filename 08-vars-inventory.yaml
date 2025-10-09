@@ -1,4 +1,4 @@
-- name: variables from file
+- name: variables from invertory
   hosts: local
   connection: local
   tasks:
