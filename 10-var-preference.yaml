@@ -6,11 +6,13 @@
    vars_files:
    - Couse.yaml
    vars_prompt:
-      - name: NAME
-        prompt: what is you NAME
-        private: false
+   - name: NAME
+     prompt: what is you NAME
+     private: false
+
   tasks:
    - name: testing variables preference
+     vars:
      NAME: from task level
      ansible.builtin.debug:
      msg: "Name: {{ NAME }}"
