@@ -9,9 +9,9 @@
    - name: NAME
      prompt: What is you NAME
      private: false
-  tasks:
-  - name: testing variables preference
-    vars:
-      NAME: from task level
-      ansible.builtin.debug:
-       msg: "Name: {{ NAME }}"
+     tasks:
+     - name: testing variables preference
+       vars:
+         NAME: from task level
+       ansible.builtin.debug:
+         msg: "Name: {{ NAME }}"
