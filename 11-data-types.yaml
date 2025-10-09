@@ -13,6 +13,6 @@
     could: AWS
     CM: Ansible
   tasks:
-   - name: print the crouse information
-     ansible.builtin.debug:
-     msg: "Course name: {{ COURSE }}, duration: {{ DURATION }},is it live :{{ IS_LIVE }}, Tools: {{ TOOLS}},concepts: {{ CONCEPTS }}"
+    - name: print the crouse information
+      ansible.builtin.debug:
+       msg: "Course name: {{ COURSE }}, duration: {{ DURATION }},is it live :{{ IS_LIVE }}, Tools: {{ TOOLS}},concepts: {{ CONCEPTS }}"
