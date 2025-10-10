@@ -4,16 +4,9 @@
   vars:
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
   ## Dictionary  or MAP
-  tags:
-   application: payment
-   Environment: Dev
-  # List
-  listTags:
-  - key: Application
-    value: payment
-  - key: Environment
-    value: Dev
-
+   tags:
+    application: payment
+    Environment: Dev
   tasks:
   - name: default variables
     ansible.builtin.debug:
@@ -29,7 +22,3 @@
     ansible.builtin.debug:
      msg: "Tags are  :{{ tags | dict2items  }}"
 
-# list convert to MAP function
-  - name: convert list into map
-    ansible.builtin.debug:
-     msg: "Tag map :{{ listTags | items2dict   }}"
