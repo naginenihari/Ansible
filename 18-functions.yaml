@@ -4,7 +4,7 @@
   vars:
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
   ## Dictionary  or MAP
-   tags:
+   env_tags:
     application: payment
     Environment: Dev
   tasks:
@@ -15,10 +15,10 @@
 #string to list convert function
   - name: convert String to list
     ansible.builtin.debug:
-     msg: "technologies are :{{ technologies | split ( ',' ) }}"
+     msg: "Technologies are :{{ technologies | split ( ',' ) }}"
 
 # MAP convert to LIST function
   - name: convert map to list
     ansible.builtin.debug:
-     msg: "Tags are  :{{ tags | dict2items  }}"
+     msg: "Tags are  :{{ env_tags | dict2items  }}"
 
