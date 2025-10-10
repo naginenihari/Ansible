@@ -5,7 +5,7 @@
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
    my_name: "HARIbabu NAGINeNI Chowdary"
    email: "nagineniHariaws@GMAIl.coM"
-   ipaddress: 192.168.190.50
+   ipaddress: 192.168.190.450
   ## Dictionary  or MAP
    env_tags:
     application: payment
