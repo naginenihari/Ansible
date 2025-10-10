@@ -36,7 +36,7 @@
   - name: convert list into map
     ansible.builtin.debug:
      msg: "Tag map :{{ listTags | items2dict }}"     
-
+#read convert to MAP function
   - name: read yaml and take it into variable
     ansible.builtin.set_fact:
       student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
@@ -52,11 +52,11 @@
 
   - name: convert uppercase
     ansible.builtin.debug:
-     msg: ":{{ my_name | upper }}"
+     msg: "{{ my_name | upper }}"
 
   - name: convert lowercase
     ansible.builtin.debug:
-     msg: ":{{ email | lower }}"
+     msg: "{{ email | lower }}"
 
   - name: check IP is valid or not
     ansible.builtin.debug: 
