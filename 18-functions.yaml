@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-   technologies: DEVOPS, LINUX, ANSIBLE, TERRAFORM, SHELL     ##String
+   technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
   tasks:
   - name: default variables
     ansible.builtin.debug:
