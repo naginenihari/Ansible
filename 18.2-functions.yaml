@@ -1,0 +1,72 @@
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+   technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
+   my_name: "HARIbabu NAGINeNI Chowdary"
+   email: "nagineniHariaws@GMAIl.coM"
+   ipaddress: 192.168.190.450
+  ## Dictionary  or MAP
+   env_tags:
+    application: payment
+    Environment: Dev
+    # List
+   listTags:
+   - key: Application
+     value: payment
+   - key: Environment
+     value: Dev
+
+  tasks:
+  - name: default variables
+    ansible.builtin.debug:
+     msg: "Hello,{{ name | default('NAGINENI') }}"
+
+#string to list convert function
+  - name: convert String to list
+    ansible.builtin.debug:
+     msg: "Technologies are :{{ technologies | split ( ',' ) }}"
+
+# MAP convert to LIST function
+  - name: convert map to list
+    ansible.builtin.debug:
+     msg: "Tags lists are :{{ env_tags | dict2items }}"
+
+#list convert to MAP function
+  - name: convert list into map
+    ansible.builtin.debug:
+     msg: "Tag map :{{ listTags | items2dict }}"     
+
+  - name: read yaml and take it into variable
+    ansible.builtin.set_fact:
+      student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
+
+  - name: convert yaml into json
+    ansible.builtin.debug:
+      msg: "json: {{ student_yaml | to_json  }}"
+  
+  - name: save json to file
+    ansible.builtin.copy:
+      dest: ./student-data.json
+      content: "{{ student_yaml | to_nice_json  }}"
+
+  - name: convert uppercase
+    ansible.builtin.debug:
+     msg: ":{{ my_name | upper }}"
+
+  - name: convert lowercase
+    ansible.builtin.debug:
+     msg: ":{{ email | lower }}"
+
+  - name: check IP is valid or not
+    ansible.builtin.debug: 
+      msg: "{{ ipaddress | ansible.utils.ipv4 }}"
+
+  - name: grep for root
+    ansible.builtin.command: cat /etc/passwd | grep root
+    #ansible.builtin.shell: cat /etc/passwd | grep root
+    register: command_output
+
+  - name: print the command_output
+    ansible.builtin.debug:
+      msg: "{{ command_output }}"
