@@ -3,7 +3,7 @@
   connection: local
   vars:
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
-   name: "HARIbabu NAGINeNI Chowdary"
+   my_name: "HARIbabu NAGINeNI Chowdary"
   ## Dictionary  or MAP
    env_tags:
     application: payment
@@ -50,4 +50,4 @@
 
   - name: convert uppercase
     ansible.builtin.debug:
-     msg: ":{{ name | upper }}"
+     msg: ":{{ my_name | upper }}"
