@@ -8,11 +8,11 @@
     application: payment
     Environment: Dev
     # List
-  listTags:
-  - key: Application
-    value: payment
-  - key: Environment
-    value: Dev
+   listTags:
+   - key: Application
+     value: payment
+   - key: Environment
+     value: Dev
 
   tasks:
   - name: default variables
