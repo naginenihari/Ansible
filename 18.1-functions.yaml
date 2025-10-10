@@ -5,6 +5,7 @@
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
    my_name: "HARIbabu NAGINeNI Chowdary"
    email: "nagineniHariaws@GMAIl.coM"
+   ipaddress: 192.168.190.50
   ## Dictionary  or MAP
    env_tags:
     application: payment
@@ -56,3 +57,7 @@
   - name: convert lowercase
     ansible.builtin.debug:
      msg: ":{{ email | lower }}"
+
+  - name: check IP is valid or not
+    ansible.builtin.debug: 
+      msg: "{{ ipaddress | ansible.utils.ipv4 }}"
