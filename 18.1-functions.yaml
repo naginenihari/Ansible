@@ -3,6 +3,7 @@
   connection: local
   vars:
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
+   name: "HARIbabu NAGINeNI Chowdary"
   ## Dictionary  or MAP
    env_tags:
     application: payment
@@ -47,3 +48,6 @@
       dest: ./student-data.json
       content: "{{ student_yaml | to_nice_json  }}"
 
+  - name: convert uppercase
+    ansible.builtin.debug:
+     msg: ":{{ name | upper }}"
