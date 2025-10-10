@@ -4,6 +4,7 @@
   vars:
    technologies: DEVOPS,LINUX,ANSIBLE,TERRAFORM,SHELL     ##String
    my_name: "HARIbabu NAGINeNI Chowdary"
+   email: "nagineniHariaws@GMAIl.coM"
   ## Dictionary  or MAP
    env_tags:
     application: payment
@@ -51,3 +52,7 @@
   - name: convert uppercase
     ansible.builtin.debug:
      msg: ":{{ my_name | upper }}"
+
+  - name: convert lowercase
+    ansible.builtin.debug:
+     msg: ":{{ email | lower }}"
