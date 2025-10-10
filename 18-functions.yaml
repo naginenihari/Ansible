@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   tasks:
-   - name: deafult variables
-     ansible.builtin.debug:
-     msg: "Hello,{{ name }}"
+  - name: deafult variables
+    ansible.builtin.debug:
+    msg: "Hello,{{ name }}"
     
