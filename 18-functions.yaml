@@ -12,7 +12,7 @@
   - key: Application
     value: payment
   - key: Environment
-    value: dev
+    value: Dev
 
   tasks:
   - name: default variables
